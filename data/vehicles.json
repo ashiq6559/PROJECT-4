@@ -4,5 +4,23 @@
         "type": "bike",
         "price": "3000",
         "image": "https:\/\/api.goinmart.com\/images\/product\/13597\/suzuki_gixxer_sf_fi_abs_matt_black_2023_23380.jpg"
+    },
+    {
+        "name": "Honda s660 DDR4 ",
+        "type": "car",
+        "price": "20000",
+        "image": "https:\/\/www.motortrend.com\/files\/662177b753504a000895785c\/038-honda-spoon-s660.jpg?w=768&width=768&q=75&format=webp"
+    },
+    {
+        "name": "Honda s660 DDR5",
+        "type": "car",
+        "price": "20000",
+        "image": "https:\/\/www.motortrend.com\/files\/662177b753504a000895785c\/038-honda-spoon-s660.jpg?w=768&width=768&q=75&format=webp"
+    },
+    {
+        "name": "Honda s660 DDR4 ",
+        "type": "car",
+        "price": "20000",
+        "image": "https:\/\/www.motortrend.com\/files\/662177b753504a000895785c\/038-honda-spoon-s660.jpg?w=768&width=768&q=75&format=webp"
     }
 ]

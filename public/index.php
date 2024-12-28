@@ -1,15 +1,15 @@
 <?php
 
 // Required classes and trait
-require_once '../../app/Classes/VehicleBase.php';
-require_once '../../app/Classes/FileHandler.php';
-require_once '../../app/Classes/VehicleManager.php';
+require_once '../app/Classes/VehicleBase.php';
+require_once '../app/Classes/FileHandler.php';
+require_once '../app/Classes/VehicleManager.php';
 
 // Initialize VehicleManager to handle operations
 $manager = new VehicleManager('', '', '', '');
 $vehicles = $manager->getVehicles(); // Fetch all vehicles from the JSON file
 
-require_once 'header.php'; // Include navigation header
+require_once 'views/header.php'; // Include navigation header
 ?>
 
 <div class="container mt-5">
@@ -31,8 +31,8 @@ require_once 'header.php'; // Include navigation header
                                 Type: <?= htmlspecialchars($vehicle['type'] ?? 'Unknown') ?><br>
                                 Price: $<?= htmlspecialchars($vehicle['price'] ?? '0.00') ?>
                             </p>
-                            <a href="edit.php?id=<?= $index ?>" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="delete.php?id=<?= $index ?>" 
+                            <a href="views/edit.php?id=<?= $index ?>" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="views/delete.php?id=<?= $index ?>" 
                                class="btn btn-danger btn-sm"
                                onclick="return confirm('Are you sure you want to delete this vehicle?');">Delete</a>
                         </div>
@@ -42,7 +42,7 @@ require_once 'header.php'; // Include navigation header
         </div>
     <?php else: ?>
         <div class="alert alert-info text-center">
-            No vehicles found. <a href="add.php" class="btn btn-primary btn-sm">Add New Vehicle</a>
+            No vehicles found. <a href="views/add.php" class="btn btn-primary btn-sm">Add New Vehicle</a>
         </div>
     <?php endif; ?>
 </div>

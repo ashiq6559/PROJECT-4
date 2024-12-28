@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $manager->writeToFile($vehicles);
 
     // Redirect to the index page
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit;
 }
 

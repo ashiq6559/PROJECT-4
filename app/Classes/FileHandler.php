@@ -15,7 +15,9 @@ trait FileHandler
 
     protected function writeFile($data)
     {
-        file_put_contents($this->filePath, json_encode($data, JSON_PRETTY_PRINT));
+        // file_put_contents($this->filePath, json_encode($data, JSON_PRETTY_PRINT));
+        $jsonData = json_encode($data, JSON_PRETTY_PRINT);
+        file_put_contents($this->filePath, $jsonData);
     }
 
     // private $filePath = '../data/vehicles.json';

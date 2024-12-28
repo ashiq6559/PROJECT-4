@@ -15,12 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $manager = new VehicleManager($name, $type, $price, $image);
 
-    $vehicles = $manager->readFromFile();
-    $vehicles[] = $manager->getDetails(); // Add new vehicle
-    $manager->writeToFile($vehicles);
-
+    // $vehicles = $manager->readFromFile();
+    $vehicles[] = $manager->getDetails();
+    $manager->addVehicle($vehicles);
     echo "Vehicle added successfully!";
-
     header('Location: index.php');
 }
 

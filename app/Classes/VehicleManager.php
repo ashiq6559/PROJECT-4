@@ -17,9 +17,9 @@ class VehicleManager extends VehicleBase
     public function addVehicle($data)
     {
         $vehicles = $this->readFile();
-        $data['id'] = count($vehicles) + 1;
-        $vehicles[] = $data;
-        $this->writeFile($vehicles);
+        // $vehicles[] = $data;
+        $newVehicles = array_merge($vehicles,$data);
+        $this->writeFile($newVehicles);
     }
 
     public function editVehicle($id, $data)
@@ -34,12 +34,26 @@ class VehicleManager extends VehicleBase
         $this->writeFile($vehicles);
     }
 
-    public function deleteVehicle($id)
+    public function deleteVehicle($index)
     {
+        // Read existing vehicles from the file
         $vehicles = $this->readFile();
-        $vehicles = array_filter($vehicles, fn($v) => $v['id'] != $id);
-        $this->writeFile(array_values($vehicles));
+    
+        // Check if the index exists in the array
+        if (isset($vehicles[$index])) {
+            // Remove the vehicle at the specified index
+            unset($vehicles[$index]);
+    
+            // Re-index the array after deletion to avoid gaps in the array keys
+            $this->writeFile(array_values($vehicles));
+    
+            echo "Vehicle at index $index has been deleted.";
+        } else {
+            echo "No vehicle found at index $index.";
+        }
     }
+    
+    
 
     public function getVehicles()
     {
